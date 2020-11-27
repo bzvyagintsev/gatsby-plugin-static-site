@@ -4,11 +4,11 @@ Disables client side routing for Gatsby.
 
 ## Install
 
-`npm install --save @wardpeet/gatsby-plugin-static-site`
+`npm install --save @bzvyagintsev/gatsby-plugin-static-site`
 
 ## How to use
 
 ```javascript
 // In your gatsby-config.js
-plugins: [`@wardpeet/gatsby-plugin-static-site`];
+plugins: [`@bzvyagintsev/gatsby-plugin-static-site`];
 ```
