@@ -20,6 +20,8 @@ exports.onClientEntry = () => {
     const originalLoadPage = loader.loadPage;
 
     loader.loadPageSync = path => {
+      path = path.replace(/[!'()*]/g, (c) => '%' + c.charCodeAt(0).toString(16));
+      
       let pageResources;
       // if the path is the same as our current page we know it's not a prefetch
       if (path === location.pathname) {
@@ -36,6 +38,8 @@ exports.onClientEntry = () => {
     };
 
     loader.loadPage = path => {
+      path = path.replace(/[!'()*]/g, (c) => '%' + c.charCodeAt(0).toString(16));
+      
       let pageResources;
       // if the path is the same as our current page we know it's not a prefetch
       if (path === location.pathname) {
